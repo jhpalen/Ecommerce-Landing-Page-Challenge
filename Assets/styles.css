@@ -172,3 +172,48 @@ body {
   }  
 
 /** end of navigation section **/
+
+/** start of style for benefits section **/
+/* Apply a flex container to the benefits list */
+.benefits-list {
+    display: flex; /* Use flexbox layout */
+    justify-content: space-between; /* Distribute items evenly along the row */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+  }
+  
+  /* Style individual benefit items */
+  .benefit-item {
+    flex-basis: calc(20% - 20px); /* Distribute items evenly within the container */
+    margin: 10px; /* Add some spacing between items */
+    text-align: center; /* Center the content within each item */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+  }
+
+  .benefit-item img {
+    margin-right: 10px;
+  }
+  
+  /* Container for horizontal scrolling */
+  .benefits-scroll-container {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 10px 0; /* Add some spacing */
+  }
+
+  /* Adjust styles for mobile view */
+  @media (max-width: 768px) {
+    .benefits-list {
+      justify-content: center; /* Center items vertically */
+      flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
+      width: 768px;
+    }
+    .benefit-item {
+      flex-basis: calc(100% - 20px); /* Full width of container minus margin */
+    }
+  }
+  
+/** end of style for benefits section **/
