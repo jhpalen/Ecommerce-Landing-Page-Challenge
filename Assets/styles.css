@@ -13,6 +13,8 @@ hr {
     border-width: 0.5px;
 }
 
+.text-center { text-align: center; }
+
 /** navigation section **/
   .navigation {
     display: flex;
@@ -308,6 +310,9 @@ hr {
   right: -15px;
   top: -10px;
 }
+.items-container {
+  justify-content: flex-start;
+}
 }
 
 .relative {
@@ -351,7 +356,7 @@ hr {
   display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 5px;;
+    margin-top: 15px;;
 }
 
 .cart-item .actions .price { 
@@ -398,7 +403,7 @@ hr {
     cursor: pointer;
     position: absolute;
     display: block;
-    top: 20px;
+    top: 0;
     bottom: 0;
     border: 0 none;
     background: none;
@@ -444,14 +449,106 @@ input, .drawer textarea {
     right: 20px;
 }
 
+#cart-total {
+  display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+#cartSubtotal { font-weight: 600;}
+
+
+
+.hidden-label {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
 
 
 #checkout {
   font-size: 20px;
-    margin: 15px 10px 5px;
+    margin: 15px 0 5px;
     padding: 8px;
     width: -webkit-fill-available;
     background: #000;
     color: #fff;
     text-transform: uppercase;
+}
+
+
+/** style for cart page nav **/
+#cartItemsDetails #cart-items {
+  position: inherit;
+  display: block;
+}
+
+#cartItemsDetails .close-cart {
+  display: none;
+}
+
+#cartItemsDetails #cart-list {
+  height: auto;
+}
+
+#cartItemsDetails .cart-item {
+  justify-content: flex-start;
+}
+
+textarea.input-full {
+    width: -webkit-fill-available;
+    border: 1px solid #e8e8e1;
+}
+
+.cart-notes {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    min-height: 60px;
+    height: 60px;
+    font-size: 14px;
+}
+
+#cart-coupon-code {
+    width: -webkit-fill-available;
+    margin-bottom: 5px;
+    font-size: 14px!important;
+    border: 1px solid #e8e8e1;
+    padding: 8px 10px;
+}
+
+.cart__page-col:last-child {
+  background-color: #f7f7f7;
+}
+
+@media only screen and (min-width: 769px){
+  .cart__page {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.cart__page-col:first-child {
+    flex: 1 1 50%;
+    padding-right: 30px;
+}
+.cart__page-col:last-child {
+    position: sticky;
+    top: 10%;
+    flex: 0 1 35%;
+    padding: 30px;
+}
+#cartItemsDetails .cart__item-details {
+  min-width: 500px;
+  width: 100%;
+  max-width: unset;
+}
+.cart-notes {
+  min-height: 80px;
+  height: 80px;
+}
 }

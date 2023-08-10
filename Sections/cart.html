@@ -1,0 +1,31 @@
+<section id="cart-items" class="hidden">
+  <div class="text-center" style="margin-bottom: 40px;">
+    <h2>Cart</h2>
+    <p><a href="#" class="button">Continue Shopping</a></p>
+  </div>
+  <button class="close-cart">X</button>
+  <hr>
+  <div class="cart__page">
+    <div class="cart__page-col">
+      <h2>Items</h2>
+      <ul id="cart-list"></ul>
+    </div>
+    <div class="cart__page-col">
+      <h2>Order Summary</h2>
+      <div>
+        <label for="CartNote" style="letter-spacing: normal; text-transform: unset; font-weight: 600; font-size: 14px;margin-bottom:0;">Special Instruction</label>
+        <textarea name="note" class="input-full cart-notes" id="CartNote"></textarea>
+      </div>
+      <div style="margin-bottom:20px;">
+        <label for="CartNote" style="letter-spacing: normal; text-transform: unset; font-weight: 600; font-size: 14px;margin-bottom:10px;">Discount Code</label>
+        <input class="form-input" autocomplete="off" type="text" name="discount" id="cart-coupon-code" placeholder="Enter Discount Code"> 
+        <span style="font-size:12px;">
+          
+          Discount code will be applied on the checkout page.
+        </span>
+      </div>
+      <div id="cart-total"><label>Subtotal:</label><span id="cartSubtotal"></span></div>
+      <button id="checkout">Begin Checkout</button>
+    </div>
+  </div>
+</section>

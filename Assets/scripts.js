@@ -54,12 +54,20 @@ $(document).ready(function() {
                     // Update the cart items in the cart list
                     var cartData = JSON.parse(localStorage.getItem('cart')) || {};
                     cartList.innerHTML = ''; // Clear previous cart items
+
+                    // Initialize total subtotal
+  let totalSubtotal = 0;
                 
                     // Display cart items with quantity and remove option
                     for (const productId in cartData) {
                       const product = productData[productId];
                       const cartItem = document.createElement('li');
                       cartItem.classList.add('cart-item');
+    
+                      // Calculate and update the subtotal for the current item
+    const subtotal = (cartData[productId] * product.price).toFixed(2);
+    totalSubtotal += parseFloat(subtotal); // Accumulate the subtotal
+
                       cartItem.innerHTML = `
                       <div class="cart__image"><img src="${product.image}"></div>
                       <div class="cart__item-details">
@@ -104,6 +112,10 @@ $(document).ready(function() {
          
                      cartList.appendChild(cartItem);
                     }
+
+                    // Update the UI to display the total subtotal
+  const totalSubtotalElement = document.getElementById('cartSubtotal');
+  totalSubtotalElement.textContent = `$${totalSubtotal.toFixed(2)}`;
                 
                     // Show the cart items
                     cartItemsList.style.display = 'block';
@@ -132,6 +144,11 @@ $(document).ready(function() {
       
           // Update the cart data with the new quantity
           cartData[productId] = newQuantity;
+
+          if(newQuantity == 0){
+            removeFromCart(productId);
+            return;
+          }
       
           // Save the updated cart data back to local storage
           localStorage.setItem('cart', JSON.stringify(cartData));
@@ -168,6 +185,14 @@ $(document).ready(function() {
 
         // Initial update of cart overview
         updateCartOverview();
+
+        // Initial update of cart UI on cart page load
+        // Check if the current URL contains "/cart"
+if (window.location.href.includes('/cart')) {
+  // Run the updateCartUI code here
+  updateCartUI();
+}
+
     }
 
 
@@ -193,4 +218,8 @@ $(document).ready(function() {
     $('#insta').load('Sections/insta.html');
     $('#newsletter').load('Sections/newsletter.html');
     $('#footer').load('Sections/footer.html');
+
+    /* cart template */
+    $('#cartItemsDetails').load('/Sections/cart.html', addToCartFunctionality);
+    
 });
