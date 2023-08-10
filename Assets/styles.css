@@ -552,3 +552,59 @@ textarea.input-full {
   height: 80px;
 }
 }
+
+
+/** Style for Sitewide Sale section **/
+/* Apply basic styling to columns */
+.sitewide-sale {
+  display: flex; /* Use flexbox for the container */
+  overflow-x: auto; /* Enable horizontal scrolling if content overflows */
+    align-items: center;
+    padding: 10px;
+    justify-content: space-evenly;
+    margin: 25px 0;
+}
+
+
+.deal-column div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+}
+
+.deal-column h2 {
+  margin-right: 5px; /* Add some space between <h2> and <h3> */
+  font-size: 32px;
+}
+
+.deal-column h3 {
+  margin-left: 5px; /* Add some space between <h2> and <h3> */
+  font-size: 18px;
+}
+
+.deal-column p {
+  display: block; /* Display <span> as a block element (below <h2> and <h3>) */
+  margin-top: 3px; /* Add space between <h3> and <p> */
+  font-size: 10px;
+  text-align: center;
+}
+
+/* Apply styling to the sitewide sale button */
+.sitewide-sale .button {
+  display: block;
+  text-align: center;
+  padding: 10px 20px;
+  background-color: #000;
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  min-width: 300px;
+}
+
+@media only screen and (max-width: 769px){
+  /* Apply margin-left to the first .deal-column */
+.deal-column:first-child {
+  margin-left: 50px;
+}
+}
