@@ -217,3 +217,22 @@ body {
   }
   
 /** end of style for benefits section **/
+
+/** start of style for hero section **/
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    cursor: pointer;;
+  }
+  
+  .hero-banner {
+    flex: 1;
+  }
+
+  .hero-banner img {
+    width: 100%;
+  }
+  
+/** end of style for hero section **/
